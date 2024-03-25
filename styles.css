@@ -1,0 +1,102 @@
+body {
+    background-color: #DC143C;
+    margin: 0;
+}
+
+h1 {
+    font-family: Staatliches;
+    letter-spacing: 2px;
+    margin-bottom: 20px; Add margin bottom to create space
+}
+
+.main {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-main {
+    width: 90%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.espantaperros,
+.espantaperros1 {
+    width: 70%; /* Adjust as needed */
+    max-width: 300px; /* Set a maximum width */
+    filter: brightness(100%);
+}
+
+.espantaperros:hover,
+.espantaperros1:hover {
+    filter: brightness(120%);
+    transform: translate(2px, 2px);
+}
+
+.estirado {
+    width: 80%; /* Adjust as needed */
+    max-width: 300px; /* Set a maximum width */
+	margin-top: 50px; /* Add margin top to move it down */
+
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-width {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-color: black;
+    border-width: thin;
+}
+
+/* Progressive Increase in Sizes */
+@media (min-width: 768px) {
+    .espantaperros,
+    .espantaperros1 {
+        width: 75%; /* Adjust as needed */
+        max-width: 350px; /* Set a maximum width */
+    }
+
+    .estirado {
+        width: 85%; /* Adjust as needed */
+        max-width: 350px; /* Set a maximum width */
+    }
+}
+
+@media (min-width: 1024px) {
+    .espantaperros,
+    .espantaperros1 {
+        width: 80%; /* Adjust as needed */
+        max-width: 400px; /* Set a maximum width */
+    }
+
+    .estirado {
+        width: 90%; /* Adjust as needed */
+        max-width: 400px; /* Set a maximum width */
+    }
+}
+
+@media (min-width: 1440px) {
+    .espantaperros,
+    .espantaperros1 {
+        width: 85%; /* Adjust as needed */
+        max-width: 400px; /* Set a maximum width */
+    }
+
+    .estirado {
+        width: 95%; /* Adjust as needed */
+        max-width: 500px; /* Set a maximum width */
+    }
+}
