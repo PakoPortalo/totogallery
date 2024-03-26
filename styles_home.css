@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
 
+/* Styles specific for the gallery */
+.row {
+    margin-top: 20px;
+}
+
+.img-fluid {
+    border-radius: 5px; /* if you prefer rounded corners */
+    transition: transform 0.3s ease-in-out; /* for a subtle zoom effect on hover */
+}
+
+.img-fluid:hover {
+    transform: scale(1.05); /* subtle zoom effect on hover */
+}
+
+
 /* Reset padding and margin for all elements */
 * {
     padding: 0;
