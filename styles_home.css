@@ -1,78 +1,97 @@
-/* Styles specific for the gallery */
-.row {
-    margin-top: 20px;
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+
+/* Reset padding and margin for all elements */
+* {
+    padding: 0;
+    margin: 0;
 }
 
-.img-fluid {
-    border-radius: 5px; /* if you prefer rounded corners */
-    transition: transform 0.3s ease-in-out; /* for a subtle zoom effect on hover */
+body {
+    padding-left: 250px; /* Width of fixed sidebar for large screens */
 }
 
-.img-fluid:hover {
-    transform: scale(1.05); /* subtle zoom effect on hover */
-}
-
-/* styles_home.css */
+/* Main navbar styling */
 .navbar {
+    background-color: #DC143C; /* Red background color */
     position: fixed;
     top: 0;
     left: 0;
-    width: 250px; /* Width of the navbar */
-    height: 100%;
-    padding-top: 1rem;
+    width: 250px; /* Width of the sidebar */
+    height: 100%; /* Full height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center logo/title in the sidebar */
+    z-index: 1000; /* Ensures navbar is on top of other content */
 }
 
+/* Navbar brand/logo area */
 .navbar-brand {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: 100%; /* Full width of the sidebar */
 }
 
+/* Navbar logo image */
+.navbar-brand img {
+    height: 120px; /* Logo height */
+    width: auto; /* Maintain aspect ratio */
+    margin-top: 1rem; /* Space from top */
+}
+
+/* Navbar main title */
 .navbar-brand h1 {
-    color: white;
-    margin-top: 0.5rem;
-}
-
-.navbar-toggler {
-    margin-top: 1rem;
-}
-
-.navbar-nav {
-    width: 100%;
-}
-
-.nav-link {
-    color: white;
-    margin: 5px 0;
     font-family: 'Staatliches', cursive;
+    color: white; /* Title color */
+    font-size: 1.5rem; /* Adjust the size as you like */
+    margin-top: -20px; /* Adjust this value to reduce the space between the logo and title */
 }
 
-/* Responsive adjustments */
+/* Navbar links */
+.navbar-nav {
+    display: flex;
+    flex-direction: column;
+    width: 100%; /* Full width of the sidebar */
+}
+
+.navbar-nav .nav-link {
+    color: white !important; /* Ensures the text color is white */
+    font-family: 'Staatliches', cursive; /* Custom font for the links */
+    padding: 0.5rem 1rem; /* Padding for the links */
+    text-align: left;
+}
+
+/* Adjustments for navbar toggle button */
+.navbar-toggler {
+    display: none; /* Hide toggle button by default */
+}
+
+/* Adjustments for smaller screens */
 @media (max-width: 991px) {
+    body {
+        padding-left: 0; /* Reset sidebar padding for small screens */
+    }
+
     .navbar {
-        width: 100%; /* Full width */
-        padding-top: 0;
+        width: 100%; /* Full width for small screens */
+        height: auto; /* Auto height for small screens */
     }
-    .navbar-brand {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .navbar-brand h1 {
-        font-size: 1.2rem; /* Smaller font size for mobile */
-        text-align: left;
-    }
+
     .navbar-toggler {
-        margin-top: 0;
+        display: block; /* Show toggle button */
+        margin: 0.5rem; /* Space around the toggler */
     }
-}
 
-.container {
-    padding-top: 70px; /* Space for the navbar */
-}
+    .collapse:not(.show) {
+        display: none;
+    }
 
-@media (min-width: 992px) {
-    .container {
-        padding-left: 270px; /* Space for the fixed navbar */
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .navbar-brand, .navbar-nav .nav-link {
+        text-align: left;
     }
 }
