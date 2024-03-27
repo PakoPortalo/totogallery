@@ -46,6 +46,7 @@ body {
     align-items: center;
     text-align: center;
     width: 100%; /* Full width of the sidebar */
+    margin-bottom: 1rem;
 }
 
 /* Navbar logo image */
@@ -58,9 +59,14 @@ body {
 /* Navbar main title */
 .navbar-brand h1 {
     font-family: 'Staatliches', cursive;
-    color: white; /* Title color */
+    color: black; /* Title color */
     font-size: 1.5rem; /* Adjust the size as you like */
     margin-top: -20px; /* Adjust this value to reduce the space between the logo and title */
+}
+
+.brand-logo {
+    max-height: 120px;
+    margin-bottom: 1rem;
 }
 
 /* Navbar links */
@@ -73,40 +79,71 @@ body {
 .navbar-nav .nav-link {
     color: white !important; /* Ensures the text color is white */
     font-family: 'Staatliches', cursive; /* Custom font for the links */
-    padding: 0.5rem 1rem; /* Padding for the links */
+    padding: 2rem 1rem; /* Padding for the links */
     text-align: left;
 }
 
-/* Adjustments for navbar toggle button */
-.navbar-toggler {
-    display: none; /* Hide toggle button by default */
-}
-
-/* Adjustments for smaller screens */
+/* Mobile styles */
 @media (max-width: 991px) {
     body {
-        padding-left: 0; /* Reset sidebar padding for small screens */
+        padding-top: 150px; /* Adjust this based on the height of your mobile navbar */
+        padding-left: 0; /* Remove left padding as the sidebar will not be shown */
     }
 
-    .navbar {
-        width: 100%; /* Full width for small screens */
-        height: auto; /* Auto height for small screens */
+    .navbar-fixed-left {
+        width: 100%; /* Full width */
+        height: auto; /* Adjust height automatically */
+        position: fixed; /* Fix at the top */
+        top: 0;
+        left: 0;
+    }
+
+    .navbar-brand {
+        flex-direction: column; /* Logo and title stacked */
+        align-items: flex-start; /* Align to the start (left) */
+        padding-left: 1rem; /* Add padding to match the original navbar alignment */
+    }
+
+    .navbar-brand img {
+        height: 50px; /* Smaller logo for mobile */
+        width: auto; /* Maintain aspect ratio */
+        margin-top: 0.5rem; /* Margin from the top of the navbar */
+        margin-left: 1rem;
+        margin-bottom: 0; /* No bottom margin */
+    }
+
+    .navbar-brand h1 {
+        font-size: 0.9rem; /* Smaller font size for title */
+        color: black; /* Black color for the title text */
+        margin-top: 0.25rem; /* Small space between logo and title */
     }
 
     .navbar-toggler {
-        display: block; /* Show toggle button */
-        margin: 0.5rem; /* Space around the toggler */
-    }
-
-    .collapse:not(.show) {
-        display: none;
+        display: block; /* Ensure toggler is displayed */
+        position: absolute; /* Position it absolutely within the navbar */
+        top: 0.5rem; /* Distance from the top of the navbar */
+        right: 1rem; /* Distance from the right side of the navbar */
     }
 
     .navbar-nav {
-        flex-direction: row;
+        display: none; /* Hide nav items initially; they will show in the collapsed menu */
     }
 
-    .navbar-brand, .navbar-nav .nav-link {
-        text-align: left;
+    .navbar-collapse {
+        position: absolute; /* Positioned absolutely to fit the full width */
+        top: 56px; /* Positioned below the navbar */
+        left: 0;
+        width: 100%;
+        background-color: #DC143C; /* Background color */
+    }
+
+    .collapse.show .nav-item {
+        display: block; /* Show nav items when toggled */
+        text-align: left; /* Align text to the left */
+    }
+
+    .navbar-nav .nav-link {
+        color: black; /* Black color for the text */
+        padding: 0.5rem 1rem; /* Padding for touch targets */
     }
 }
