@@ -23,6 +23,9 @@
 
 body {
     padding-left: 250px; /* Width of fixed sidebar for large screens */
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5;
 }
 
 /* Main navbar styling */
