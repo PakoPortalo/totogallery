@@ -28,17 +28,8 @@ body {
     line-height: 1.5;
 }
 
-/* Main navbar styling */
 .navbar {
     background-color: #DC143C; /* Red background color */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 250px; /* Width of the sidebar */
-    height: 100%; /* Full height */
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center logo/title in the sidebar */
     z-index: 1000; /* Ensures navbar is on top of other content */
 }
 
@@ -82,71 +73,87 @@ body {
 .navbar-nav .nav-link {
     color: white !important; /* Ensures the text color is white */
     font-family: 'Staatliches', cursive; /* Custom font for the links */
-    padding: 2rem 1rem; /* Padding for the links */
+    font-size: 1.30rem;
+    padding: 1.5rem 1rem; 
     text-align: left;
 }
 
-/* Mobile styles */
-@media (max-width: 991px) {
-    body {
-        padding-top: 150px; /* Adjust this based on the height of your mobile navbar */
-        padding-left: 0; /* Remove left padding as the sidebar will not be shown */
-    }
+/* Small devices (landscape phones, less than 768px)
+@media (max-width: 767.98px) {
+  .navbar-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+} */
 
-    .navbar-fixed-left {
-        width: 100%; /* Full width */
-        height: auto; /* Adjust height automatically */
-        position: fixed; /* Fix at the top */
-        top: 0;
-        left: 0;
-    }
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 992px) {
 
-    .navbar-brand {
-        flex-direction: column; /* Logo and title stacked */
-        align-items: flex-start; /* Align to the start (left) */
-        padding-left: 1rem; /* Add padding to match the original navbar alignment */
-    }
+body {
+    padding-left: 0;
+}
+  .navbar {
+    padding: .9rem 1rem;
+}    
+  .navbar-nav {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .navbar-fixed-left {
+    width: 100%; /* Full width */
+    height: auto; /* Adjust height automatically */
+    position: fixed; /* Fix at the top */
+    top: 0;
+    left: 0;
+}
+.navbar-brand {
+    flex-direction: column; /* Logo and title stacked */
+    align-items: flex-start; /* Align to the start (left) */
+    padding-left: 1rem; /* Add padding to match the original navbar alignment */
+}
+.navbar-brand img {
+    height: 0px; /* Smaller logo for mobile */
+}
+.navbar-toggler {
+    display: block; /* Ensure toggler is displayed */
+    position: absolute; /* Position it absolutely within the navbar */
+    top: 0.5rem; /* Distance from the top of the navbar */
+    right: 1rem; /* Distance from the right side of the navbar */
+}
+.toggler-logo {
+    height: 75px;
+}
 
-    .navbar-brand img {
-        height: 50px; /* Smaller logo for mobile */
-        width: auto; /* Maintain aspect ratio */
-        margin-top: 0.5rem; /* Margin from the top of the navbar */
-        margin-left: 1rem;
-        margin-bottom: 0; /* No bottom margin */
-    }
+}
 
-    .navbar-brand h1 {
-        font-size: 0.9rem; /* Smaller font size for title */
-        color: black; /* Black color for the title text */
-        margin-top: 0.25rem; /* Small space between logo and title */
-    }
-
-    .navbar-toggler {
-        display: block; /* Ensure toggler is displayed */
-        position: absolute; /* Position it absolutely within the navbar */
-        top: 0.5rem; /* Distance from the top of the navbar */
-        right: 1rem; /* Distance from the right side of the navbar */
-    }
-
-    .navbar-nav {
-        display: none; /* Hide nav items initially; they will show in the collapsed menu */
-    }
-
-    .navbar-collapse {
-        position: absolute; /* Positioned absolutely to fit the full width */
-        top: 56px; /* Positioned below the navbar */
-        left: 0;
-        width: 100%;
-        background-color: #DC143C; /* Background color */
-    }
-
-    .collapse.show .nav-item {
-        display: block; /* Show nav items when toggled */
-        text-align: left; /* Align text to the left */
-    }
-
-    .navbar-nav .nav-link {
-        color: black; /* Black color for the text */
-        padding: 0.5rem 1rem; /* Padding for touch targets */
-    }
+/* Large devices (desktops, less than 1200px) */
+@media (min-width: 992px) {
+  .navbar {
+    background-color: #DC143C; /* Red background color */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh; /* Full viewport height */
+    width: 250px; /* Fixed width */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center items vertically */
+  }
+  .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+    margin: 0; /* Remove any default margin */
+  }
+  .nav-item {
+    width: 100%; /* Full width */
+  }
+  .nav-link {
+    padding: 0.5rem 1rem; /* Padding for the links */
+    color: white; /* White text color */
+    display: block; /* Block display to fill width */
+  }
+  .navbar-brand {
+    padding-left: 1rem; /* Align the brand inside the sidebar */
+    margin-bottom: -3rem; /* Space between brand and nav items */
+  }
 }
