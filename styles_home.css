@@ -89,11 +89,20 @@ body {
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 992px) {
 
+    .row {
+        margin-top: 130px;
+    }
+    
 body {
     padding-left: 0;
 }
   .navbar {
     padding: .9rem 1rem;
+    width: 100%; /* Full width */
+    height: auto; /* Adjust height automatically */
+    position:fixed; /* Fix at the top */
+    top: 0;
+    left: 0;
 }    
   .navbar-nav {
     flex-direction: row;
@@ -102,7 +111,7 @@ body {
   .navbar-fixed-left {
     width: 100%; /* Full width */
     height: auto; /* Adjust height automatically */
-    position: fixed; /* Fix at the top */
+    position:fixed; /* Fix at the top */
     top: 0;
     left: 0;
 }
